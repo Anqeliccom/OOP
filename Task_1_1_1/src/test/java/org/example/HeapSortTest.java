@@ -2,9 +2,25 @@ package org.example;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.util.Arrays;
+import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class HeapSortTest {
+
+    @Test
+    void testHeapsortLargeArray() {
+        Random random = new Random();
+        int size = 1000;
+        int[] largeArray = new int[size];
+        for (int i = 0; i < size; i++) {
+            largeArray[i] = random.nextInt(100);
+        }
+        int[] expectedArray = largeArray.clone();
+        Arrays.sort(expectedArray);
+        HeapSort.heapsort(largeArray);
+        Assertions.assertArrayEquals(expectedArray, largeArray);
+    }
 
     @Test
     void testReverseArray() {
