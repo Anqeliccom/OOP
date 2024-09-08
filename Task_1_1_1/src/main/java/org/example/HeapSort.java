@@ -1,9 +1,22 @@
 package org.example;
+import java.util.Arrays;
 
 /**
  * The {@code HeapSort} class realize heap sort algorithm.
  */
 public class HeapSort {
+
+    /**
+     * Sort a sample array and print the original and sorted arrays.
+     *
+     * @param args the command line arguments.
+     */
+    public static void main(String[] args) {
+        int[] array = {5, 4, 3, 2, 1};
+        System.out.println("Исходный массив: " + Arrays.toString(array));
+        heapsort(array);
+        System.out.println("Отсортированный массив: " + Arrays.toString(array));
+    }
 
     /**
      * Sorts array of integers using the heap sort algorithm.

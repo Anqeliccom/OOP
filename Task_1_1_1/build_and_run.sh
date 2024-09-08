@@ -1,12 +1,10 @@
 #!/bin/bash
 
-SRC_DIR="src/main/java/org/example"
-OUT_DIR="build/classes/java/main"
-DOCS_DIR="build/docs/javadoc"
-MAIN_CLASS="org.example.HeapSort"
+SRC="src/main/java/org/example/HeapSort.java"
+BIN_DIR="bin"
+DOC_DIR="docs"
 
-mkdir -p "$OUT_DIR"
-javac -d "$OUT_DIR" "$SRC_DIR"/*.java
-javadoc -d "$DOCS_DIR" -sourcepath "$SRC_DIR" $MAIN_CLASS
-java -classpath "$OUT_DIR" "$MAIN_CLASS"
+javac -d $BIN_DIR $SRC
+javadoc -d $DOC_DIR -sourcepath src/main/java org.example
+java -classpath $BIN_DIR org.example.HeapSort
 
