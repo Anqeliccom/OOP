@@ -14,7 +14,7 @@ public class HeapSort {
     public static void main(String[] args) {
         int[] array = {5, 4, 3, 2, 1};
         heapsort(array);
-        System.out.println("Отсортированный массив: " + Arrays.toString(array));
+        System.out.println(Arrays.toString(array));
     }
 
     /**
@@ -42,7 +42,7 @@ public class HeapSort {
      * @param n size of the heap.
      * @param i index of the root node of subtree to be sifted down.
      */
-    static void sift_down(int[] array, int n, int i) {
+    private static void sift_down(int[] array, int n, int i) {
         int biggest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
@@ -65,7 +65,7 @@ public class HeapSort {
      * @param i index of the first element to swap.
      * @param j index of the second element to swap.
      */
-    static void swap(int[] array, int i, int j) {
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;

@@ -51,17 +51,7 @@ class HeapSortTest {
     }
 
     @Test
-    void testSwap() {
-        int[] array = {1, 2, 3, 4, 5};
-        HeapSort.swap(array, 0, 4);
-        Assertions.assertArrayEquals(new int[]{5, 2, 3, 4, 1}, array);
-    }
-
-    @Test
-    void testSiftDown() {
-        int[] array = {1, 10, 5, 6, 2};
-        HeapSort.sift_down(array, array.length, 0);
-        int[] expectedArray = {10, 6, 5, 1, 2};
-        Assertions.assertArrayEquals(expectedArray, array);
+    void testMain() {
+        HeapSort.main(new String[]{});
     }
 }
