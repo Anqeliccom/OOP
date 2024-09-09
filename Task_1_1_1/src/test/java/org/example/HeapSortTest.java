@@ -24,6 +24,13 @@ class HeapSortTest {
     }
 
     @Test
+    void testSingleElementArray() {
+        int[] array = {42};
+        HeapSort.heapsort(array);
+        assertArrayEquals(new int[]{42}, array);
+    }
+
+    @Test
     void testReverseArray() {
         int[] array = {5, 4, 3, 2, 1};
         HeapSort.heapsort(array);
