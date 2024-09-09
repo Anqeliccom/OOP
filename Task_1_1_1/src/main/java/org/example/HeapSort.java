@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.Arrays;
 
 /**
@@ -47,17 +48,20 @@ public class HeapSort {
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < n && array[left] > array[biggest])
+        if (left < n && array[left] > array[biggest]) {
             biggest = left;
+        }
 
-        if (right < n && array[right] > array[biggest])
+        if (right < n && array[right] > array[biggest]) {
             biggest = right;
+        }
 
         if (biggest != i) {
             swap(array, i, biggest);
             sift_down(array, n, biggest);
         }
     }
+
     /**
      * Swaps two elements in array.
      *
