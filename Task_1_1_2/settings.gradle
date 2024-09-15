@@ -1,0 +1,4 @@
+rootProject.name = 'Task_1_1_2'
+include 'src:test:org.example'
+findProject(':src:test:org.example')?.name = 'org.example'
+
