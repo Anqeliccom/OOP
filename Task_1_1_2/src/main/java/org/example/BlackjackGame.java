@@ -55,12 +55,13 @@ public class BlackjackGame {
 
             if ("0".equals(input)) {
                 break;
+            } else if ("1".equals(input)) {
+                player.addCard(deck.takeCard());
+                System.out.println("Вы открыли карту " + player.getHandAsStrings().get(player.getHand().size() - 1));
+                printPlayerAndDealerHands(false);
+            } else {
+                System.out.println("Некорректный ввод! Пожалуйста, введите '1', чтобы взять карту, или '0', чтобы остановиться...");
             }
-
-            player.addCard(deck.takeCard());
-            System.out.println("Вы открыли карту " + player.getHandAsStrings().get(player.getHand().size() - 1));
-
-            printPlayerAndDealerHands(false);
         }
 
         if (player.getScore() > 21) {
