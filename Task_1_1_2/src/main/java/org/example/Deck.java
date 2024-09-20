@@ -5,7 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Represents a deck contains 52 cards and supports shuffling, taking the top card and getting cards.
+ * Represents a deck contains 52 cards.
+ * Supports shuffling, taking the top card and getting cards.
  */
 public class Deck {
     private final LinkedList<Card> cards;
@@ -13,19 +14,19 @@ public class Deck {
     private static final String[] suits = {"Пики", "Черви", "Бубны", "Трефы"};
 
     private static final Card.RankAndValues[] rankAndValues = {
-            new Card.RankAndValues("Двойка", 2),
-            new Card.RankAndValues("Тройка", 3),
-            new Card.RankAndValues("Четверка", 4),
-            new Card.RankAndValues("Пятерка", 5),
-            new Card.RankAndValues("Шестерка", 6),
-            new Card.RankAndValues("Семерка", 7),
-            new Card.RankAndValues("Восьмерка", 8),
-            new Card.RankAndValues("Девятка", 9),
-            new Card.RankAndValues("Десятка", 10),
-            new Card.RankAndValues("Валет", 10),
-            new Card.RankAndValues("Дама", 10),
-            new Card.RankAndValues("Король", 10),
-            new Card.RankAndValues("Туз", 11)
+        new Card.RankAndValues("Двойка", 2),
+        new Card.RankAndValues("Тройка", 3),
+        new Card.RankAndValues("Четверка", 4),
+        new Card.RankAndValues("Пятерка", 5),
+        new Card.RankAndValues("Шестерка", 6),
+        new Card.RankAndValues("Семерка", 7),
+        new Card.RankAndValues("Восьмерка", 8),
+        new Card.RankAndValues("Девятка", 9),
+        new Card.RankAndValues("Десятка", 10),
+        new Card.RankAndValues("Валет", 10),
+        new Card.RankAndValues("Дама", 10),
+        new Card.RankAndValues("Король", 10),
+        new Card.RankAndValues("Туз", 11)
     };
 
     /**

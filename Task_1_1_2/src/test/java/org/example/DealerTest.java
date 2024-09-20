@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests for the {@link Dealer} class.
- * This class tests updating scores, working with dealer's hidden card and outputting card as a string.
  */
 public class DealerTest {
 
