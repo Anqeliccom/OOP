@@ -90,6 +90,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Dealer</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Represents a dealer in the game and supports card operations and scoring.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,7 +103,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Dealer</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initializes the dealer with an empty hand and a score of 0.</div>
+</div>
 </div>
 </section>
 </li>
@@ -119,22 +122,34 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addCard(org.example.Card)" class="member-name-link">addCard</a><wbr>(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a card to the dealer's hand and updates the score.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in org.example">Card</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHand()" class="member-name-link">getHand</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the dealer's hand of cards.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHandAsStrings()" class="member-name-link">getHandAsStrings</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the dealer's hand as a list of formatted strings, showing the rank, suit and value.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Card.html" title="class in org.example">Card</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHiddenCard()" class="member-name-link">getHiddenCard</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the dealer's hidden card.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScore()" class="member-name-link">getScore</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the dealer's current score (taking into account aces).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHiddenCard(org.example.Card)" class="member-name-link">setHiddenCard</a><wbr>(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the dealer's hidden card and recalculates the score.</div>
+</div>
 </div>
 </div>
 </div>
@@ -156,6 +171,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>Dealer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Dealer</span>()</div>
+<div class="block">Initializes the dealer with an empty hand and a score of 0.</div>
 </section>
 </li>
 </ul>
@@ -170,36 +186,66 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="addCard(org.example.Card)">
 <h3>addCard</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addCard</span><wbr><span class="parameters">(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</span></div>
+<div class="block">Adds a card to the dealer's hand and updates the score.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>card</code> - the card to add to the hand.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setHiddenCard(org.example.Card)">
 <h3>setHiddenCard</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setHiddenCard</span><wbr><span class="parameters">(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</span></div>
+<div class="block">Sets the dealer's hidden card and recalculates the score.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>card</code> - the hidden card to set.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getHiddenCard()">
 <h3>getHiddenCard</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in org.example">Card</a></span>&nbsp;<span class="element-name">getHiddenCard</span>()</div>
+<div class="block">Returns the dealer's hidden card.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the hidden card.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getScore()">
 <h3>getScore</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getScore</span>()</div>
+<div class="block">Returns the dealer's current score (taking into account aces).</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the dealer's score.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getHand()">
 <h3>getHand</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in org.example">Card</a>&gt;</span>&nbsp;<span class="element-name">getHand</span>()</div>
+<div class="block">Returns the dealer's hand of cards.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the list of cards in the dealer's hand.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getHandAsStrings()">
 <h3>getHandAsStrings</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getHandAsStrings</span>()</div>
+<div class="block">Returns the dealer's hand as a list of formatted strings, showing the rank, suit and value.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a list of strings representing the dealer's hand.</dd>
+</dl>
 </section>
 </li>
 </ul>

@@ -90,6 +90,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Deck</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Represents a deck contains 52 cards and supports shuffling, taking the top card and getting cards.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -102,7 +103,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Deck</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initializes and shuffles the deck.</div>
+</div>
 </div>
 </section>
 </li>
@@ -119,13 +122,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Card.html" title="class in org.example">Card</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCards()" class="member-name-link">getCards</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the list of cards currently in the deck.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shuffle()" class="member-name-link">shuffle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Shuffles the deck.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Card.html" title="class in org.example">Card</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#takeCard()" class="member-name-link">takeCard</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes and returns the top card from the deck.</div>
+</div>
 </div>
 </div>
 </div>
@@ -147,6 +156,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>Deck</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Deck</span>()</div>
+<div class="block">Initializes and shuffles the deck.</div>
 </section>
 </li>
 </ul>
@@ -161,18 +171,25 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="shuffle()">
 <h3>shuffle</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">shuffle</span>()</div>
+<div class="block">Shuffles the deck.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="takeCard()">
 <h3>takeCard</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Card.html" title="class in org.example">Card</a></span>&nbsp;<span class="element-name">takeCard</span>()</div>
+<div class="block">Removes and returns the top card from the deck.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the card that is taken from the deck.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getCards()">
 <h3>getCards</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Card.html" title="class in org.example">Card</a>&gt;</span>&nbsp;<span class="element-name">getCards</span>()</div>
+<div class="block">Returns the list of cards currently in the deck.</div>
 </section>
 </li>
 </ul>
