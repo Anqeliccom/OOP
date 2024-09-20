@@ -4,18 +4,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Unit tests for the {@link Deck} class.
+ * This class tests the creating deck and taking card.
+ */
 public class DeckTest {
 
     @Test
-    public void testInitialDeckSize() {
+    public void testInitialDeck() {
         Deck deck = new Deck();
         assertEquals(52, deck.getCards().size());
     }
 
     @Test
-    public void testShuffle() {
+    void testTakeCard() {
         Deck deck = new Deck();
-        deck.shuffle();
-        assertEquals(52, deck.getCards().size());
+        int initialSize = deck.getCards().size();
+        deck.takeCard();
+        assertEquals(initialSize - 1, deck.getCards().size());
     }
+
 }

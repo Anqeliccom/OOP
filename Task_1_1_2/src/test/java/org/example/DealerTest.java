@@ -4,6 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Unit tests for the {@link Dealer} class.
+ * This class tests updating scores, working with dealer's hidden card and outputting card as a string.
+ */
 public class DealerTest {
 
     @Test
@@ -35,7 +39,7 @@ public class DealerTest {
         Dealer dealer = new Dealer();
         dealer.addCard(new Card("Пики", "Десятка", 10));
         dealer.addCard(new Card("Черви", "Туз", 11));
-        assertEquals("Десятка Пики", dealer.getHandAsStrings().get(0));
-        assertEquals("Туз Черви", dealer.getHandAsStrings().get(1));
+        assertEquals("Десятка Пики (10)", dealer.getHandAsStrings().get(0));
+        assertEquals("Туз Черви (11)", dealer.getHandAsStrings().get(1));
     }
 }

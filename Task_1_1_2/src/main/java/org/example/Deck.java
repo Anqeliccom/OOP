@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Represents a deck contains 52 cards and supports shuffling, taking the top card and getting cards.
+ */
 public class Deck {
     private final LinkedList<Card> cards;
 
@@ -25,6 +28,9 @@ public class Deck {
             new Card.RankAndValues("Туз", 11)
     };
 
+    /**
+     * Initializes and shuffles the deck.
+     */
     public Deck() {
         cards = new LinkedList<>();
 
@@ -36,14 +42,25 @@ public class Deck {
         shuffle();
     }
 
+    /**
+     * Shuffles the deck.
+     */
     public void shuffle() {
         Collections.shuffle(cards);
     }
 
+    /**
+     * Removes and returns the top card from the deck.
+     *
+     * @return the card that is taken from the deck.
+     */
     public Card takeCard() {
-        return cards.removeLast();
+        return cards.removeFirst();
     }
 
+    /**
+     * Returns the list of cards currently in the deck.
+     */
     public List<Card> getCards() {
         return cards;
     }
