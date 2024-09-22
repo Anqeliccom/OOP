@@ -11,14 +11,10 @@ import org.junit.jupiter.api.Test;
 public class CardTest {
 
     @Test
-    public void testCardValue() {
+    public void testCardInitialization() {
         Card card = new Card("Черви", "Туз", 11);
+        assertEquals("Черви", card.suit());
+        assertEquals("Туз", card.rank());
         assertEquals(11, card.value());
-    }
-
-    @Test
-    public void testCardToString() {
-        Card card = new Card("Черви", "Туз", 11);
-        assertEquals("Туз Черви", card.toString());
     }
 }

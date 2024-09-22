@@ -23,5 +23,4 @@ public class DeckTest {
         deck.takeCard();
         assertEquals(initialSize - 1, deck.getCards().size());
     }
-
 }

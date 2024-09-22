@@ -11,16 +11,6 @@ package org.example;
 public record Card(String suit, String rank, int value) {
 
     /**
-     * Returns a string representation of the card consisting of its rank and suit.
-     *
-     * @return a string representation of the card.
-     */
-    @Override
-    public String toString() {
-        return rank + " " + suit;
-    }
-
-    /**
      * Represents the rank and associated value of card.
      * Used for initializing cards with their corresponding values.
      *

@@ -5,6 +5,8 @@ import java.util.Scanner;
  * This is class for managing the game.
  */
 public class BlackjackGame {
+    private static final int BLACKJACK_SCORE = 21;
+    private static final int BUST_LIMIT = 21;
 
     private Deck deck;
     private Player player;
@@ -58,10 +60,10 @@ public class BlackjackGame {
 
         printPlayerAndDealerHands(false);
 
-        if (player.getScore() == 21 && dealer.getScore() == 21) {
+        if (player.getScore() == BLACKJACK_SCORE && dealer.getScore() == BLACKJACK_SCORE) {
             System.out.println("Оба получили блэкджек! Раунд ничья. Счёт " + getStats());
             return;
-        } else if (player.getScore() == 21) {
+        } else if (player.getScore() == BLACKJACK_SCORE) {
             playerWins++;
             System.out.println("У вас блэкджек! Вы выиграли раунд. Счёт " + getStats());
             return;
@@ -70,7 +72,7 @@ public class BlackjackGame {
         System.out.println("\nВаш ход");
         System.out.println("-------");
 
-        while (player.getScore() <= 21) {
+        while (player.getScore() <= BUST_LIMIT) {
             System.out.println("Введите '1', чтобы взять карту, и '0', чтобы остановиться...");
             String input = scanner.nextLine();
 
@@ -87,7 +89,7 @@ public class BlackjackGame {
             }
         }
 
-        if (player.getScore() > 21) {
+        if (player.getScore() > BUST_LIMIT) {
             dealerWins++;
             System.out.println("Перебор! Вы проиграли. Счет " + getStats());
             return;
@@ -102,7 +104,7 @@ public class BlackjackGame {
             dealer.getHandAsStrings().get(dealer.getHand().size() - 1));
         printPlayerAndDealerHands(true);
 
-        if (dealer.getScore() == 21) {
+        if (dealer.getScore() == BLACKJACK_SCORE) {
             dealerWins++;
             System.out.println("У дилера блэкджек! Дилер выиграл раунд. Счет " + getStats());
             return;
@@ -116,7 +118,7 @@ public class BlackjackGame {
             printPlayerAndDealerHands(true);
         }
 
-        if (dealer.getScore() > 21) {
+        if (dealer.getScore() > BUST_LIMIT) {
             playerWins++;
             System.out.println("Перебор у дилера! Вы выиграли раунд. Счет " + getStats());
         } else if (player.getScore() > dealer.getScore()) {
@@ -155,7 +157,7 @@ public class BlackjackGame {
      *
      * @return the score.
      */
-    private String getStats() {
+    String getStats() {
         return playerWins + ":" + dealerWins + getLeader();
     }
 
@@ -164,7 +166,7 @@ public class BlackjackGame {
      *
      * @return the string indicating leader.
      */
-    private String getLeader() {
+    String getLeader() {
         if (playerWins > dealerWins) {
             return " в вашу пользу.";
         } else if (dealerWins > playerWins) {
