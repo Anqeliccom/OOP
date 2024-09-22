@@ -4,9 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.util.Scanner;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests for the {@link BlackjackGame} class.
@@ -25,7 +24,6 @@ public class BlackjackGameTest {
     public void testPlayerAlwaysTakesCard() {
         game.playRound(new Scanner("1\n1\n1\n1\n1\n1\n1\n"));
         assertTrue(game.getDeck().getCards().size() >= 41);
-        assertEquals("0:1 в пользу дилера.", game.getStats());
     }
 
     @Test

@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
+
 /**
  * This is class for managing the game.
  */
@@ -80,12 +81,12 @@ public class BlackjackGame {
                 break;
             } else if ("1".equals(input)) {
                 player.addCard(deck.takeCard());
-                System.out.println("Вы открыли карту " +
-                    player.getHandAsStrings().get(player.getHand().size() - 1));
+                System.out.println("Вы открыли карту "
+                    + player.getHandAsStrings().get(player.getHand().size() - 1));
                 printPlayerAndDealerHands(false);
             } else {
-                System.out.println("Некорректный ввод! " +
-                    "Пожалуйста, введите '1', чтобы взять карту, или '0', чтобы остановиться...");
+                System.out.println("Некорректный ввод! "
+                    + "Пожалуйста, введите '1', чтобы взять карту, или '0', чтобы остановиться...");
             }
         }
 
@@ -100,8 +101,8 @@ public class BlackjackGame {
 
         dealer.addCard(dealer.getHiddenCard());
         dealer.setHiddenCard(null);
-        System.out.println("Дилер открывает закрытую карту " +
-            dealer.getHandAsStrings().get(dealer.getHand().size() - 1));
+        System.out.println("Дилер открывает закрытую карту "
+            + dealer.getHandAsStrings().get(dealer.getHand().size() - 1));
         printPlayerAndDealerHands(true);
 
         if (dealer.getScore() == BLACKJACK_SCORE) {
@@ -112,8 +113,8 @@ public class BlackjackGame {
 
         while (dealer.getScore() < 17) {
             dealer.addCard(deck.takeCard());
-            System.out.println("Дилер открывает карту " +
-                dealer.getHandAsStrings().get(dealer.getHand().size() - 1));
+            System.out.println("Дилер открывает карту "
+                + dealer.getHandAsStrings().get(dealer.getHand().size() - 1));
 
             printPlayerAndDealerHands(true);
         }
@@ -144,11 +145,11 @@ public class BlackjackGame {
     private void printPlayerAndDealerHands(boolean showDealerHiddenCard) {
         System.out.println("Ваши карты: " + player.getHandAsStrings() + " => " + player.getScore());
         if (showDealerHiddenCard) {
-            System.out.println("Карты дилера: " +
-                dealer.getHandAsStrings() + " => " + dealer.getScore());
+            System.out.println("Карты дилера: "
+                + dealer.getHandAsStrings() + " => " + dealer.getScore());
         } else {
-            System.out.println("Карты дилера: [" +
-                dealer.getHandAsStrings().getFirst() + ", <закрытая карта>]");
+            System.out.println("Карты дилера: ["
+                + dealer.getHandAsStrings().getFirst() + ", <закрытая карта>]");
         }
     }
 
