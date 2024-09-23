@@ -59,6 +59,7 @@ public class Deck {
         shuffle();
         return cards.removeFirst();
     }
+    
     /**
      * Returns the list of cards currently in the deck.
      */
