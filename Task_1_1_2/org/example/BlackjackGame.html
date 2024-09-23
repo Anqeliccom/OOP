@@ -120,10 +120,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Deck.html" title="class in org.example">Deck</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeck()" class="member-name-link">getDeck</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Dealer.html" title="class in org.example">Dealer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDealer()" class="member-name-link">getDealer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the dealer in the current game.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Deck.html" title="class in org.example">Deck</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDeck()" class="member-name-link">getDeck</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current deck being used in the game.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Player.html" title="class in org.example">Player</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlayer()" class="member-name-link">getPlayer</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the player in the current game.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;args)</code></div>
@@ -198,6 +208,32 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the deck of cards.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getPlayer()">
+<h3>getPlayer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Player.html" title="class in org.example">Player</a></span>&nbsp;<span class="element-name">getPlayer</span>()</div>
+<div class="block">Returns the player in the current game.
+ This method allows access to the player's score,
+ which is used for testing the player's progress.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the <a href="Player.html" title="class in org.example"><code>Player</code></a> object representing the player.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDealer()">
+<h3>getDealer</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Dealer.html" title="class in org.example">Dealer</a></span>&nbsp;<span class="element-name">getDealer</span>()</div>
+<div class="block">Returns the dealer in the current game.
+ This method allows access to the dealer's score,
+ which is used for testing the dealer's progress.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the <a href="Dealer.html" title="class in org.example"><code>Dealer</code></a> object representing the dealer.</dd>
 </dl>
 </section>
 </li>
