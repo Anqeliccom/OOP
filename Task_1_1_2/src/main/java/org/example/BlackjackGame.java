@@ -187,6 +187,28 @@ public class BlackjackGame {
     }
 
     /**
+     * Returns the player in the current game.
+     * This method allows access to the player's score,
+     * which is used for testing the player's progress.
+     *
+     * @return the {@link Player} object representing the player.
+     */
+    public Player getPlayer() {
+        return player;
+    }
+
+    /**
+     * Returns the dealer in the current game.
+     * This method allows access to the dealer's score,
+     * which is used for testing the dealer's progress.
+     *
+     * @return the {@link Dealer} object representing the dealer.
+     */
+    public Dealer getDealer() {
+        return dealer;
+    }
+
+    /**
      * The main launch point of the game.
      *
      * @param args command-line arguments (not used)
