@@ -51,14 +51,14 @@ public class Deck {
     }
 
     /**
-     * Removes and returns the top card from the deck.
+     * Removes and returns the top card from the deck, shuffle deck.
      *
      * @return the card that is taken from the deck.
      */
     public Card takeCard() {
+        shuffle();
         return cards.removeFirst();
     }
-
     /**
      * Returns the list of cards currently in the deck.
      */
