@@ -1,7 +1,9 @@
 package org.example;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ExpressionTest {
 
@@ -22,7 +24,8 @@ class ExpressionTest {
     void testDerivativeLargeExpression() {
         Expression expr = Expression.parseExpression("((x+5)*((y-2)/z))");
         Expression derivative = expr.derivative("x");
-        assertEquals("(((1+0)*((y-2)/z))+((x+5)*((((0-0)*z)-((y-2)*0))/(z*z))))", derivative.print());
+        assertEquals("(((1+0)*((y-2)/z))+((x+5)*((((0-0)*z)-((y-2)*0))/(z*z))))",
+            derivative.print());
     }
 
     @Test
