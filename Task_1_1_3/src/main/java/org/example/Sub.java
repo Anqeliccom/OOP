@@ -23,4 +23,20 @@ public class Sub extends Expression {
     public int eval(String variables) {
         return left.eval(variables) - right.eval(variables);
     }
+
+    @Override
+    public Expression simplify() {
+        Expression simplifiedLeft = left.simplify();
+        Expression simplifiedRight = right.simplify();
+
+        if (simplifiedLeft instanceof Number && simplifiedRight instanceof Number) {
+            return new Number(simplifiedLeft.eval("") - simplifiedRight.eval(""));
+        }
+
+        if (simplifiedLeft.equals(simplifiedRight)) {
+            return new Number(0);
+        }
+
+        return new Sub(simplifiedLeft, simplifiedRight);
+    }
 }

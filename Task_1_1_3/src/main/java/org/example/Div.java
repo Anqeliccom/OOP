@@ -29,4 +29,16 @@ public class Div extends Expression {
     public int eval(String variables) {
         return left.eval(variables) / right.eval(variables);
     }
+
+    @Override
+    public Expression simplify() {
+        Expression simplifiedLeft = left.simplify();
+        Expression simplifiedRight = right.simplify();
+
+        if (simplifiedLeft instanceof Number && simplifiedRight instanceof Number) {
+            return new Number(simplifiedLeft.eval("") / simplifiedRight.eval(""));
+        }
+
+        return new Div(simplifiedLeft, simplifiedRight);
+    }
 }

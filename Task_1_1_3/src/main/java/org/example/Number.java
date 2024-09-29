@@ -21,4 +21,9 @@ public class Number extends Expression {
     public int eval(String variables) {
         return value;
     }
+
+    @Override
+    public Expression simplify() {
+        return this;
+    }
 }

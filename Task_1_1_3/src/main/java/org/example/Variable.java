@@ -28,4 +28,9 @@ public class Variable extends Expression {
         }
         throw new IllegalArgumentException("Переменная " + name + " не обнаружена");
     }
+
+    @Override
+    public Expression simplify() {
+        return this;
+    }
 }
