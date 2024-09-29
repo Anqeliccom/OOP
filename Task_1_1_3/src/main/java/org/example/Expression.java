@@ -24,6 +24,10 @@ public abstract class Expression {
         String variables = scanner.nextLine();
         int result = expr.eval(variables);
         System.out.println("Результат вычисления: " + result);
+
+        Expression simplified = expr.simplify(variables);
+        System.out.println("Упрощённое выражение: " + simplified.print());
+
     }
 
     public static Expression parseExpression(String expr) {
@@ -111,11 +115,21 @@ public abstract class Expression {
         };
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        return equalsImpl((Expression) obj);
+    }
+
     public abstract String print();
 
     public abstract Expression derivative(String variable);
 
     public abstract int eval(String variables);
 
-    public abstract Expression simplify();
+    public abstract Expression simplify(String variables);
+
+    protected abstract boolean equalsImpl(Expression other);
 }

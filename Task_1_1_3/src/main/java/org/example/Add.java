@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Add extends Expression {
     private final Expression left;
     private final Expression right;
@@ -24,16 +26,26 @@ public class Add extends Expression {
         return left.eval(variables) + right.eval(variables);
     }
 
-
     @Override
-    public Expression simplify() {
-        Expression simplifiedLeft = left.simplify();
-        Expression simplifiedRight = right.simplify();
+    public Expression simplify(String variables) {
+        Expression simplifiedLeft = left.simplify(variables);
+        Expression simplifiedRight = right.simplify(variables);
 
         if (simplifiedLeft instanceof Number && simplifiedRight instanceof Number) {
             return new Number(simplifiedLeft.eval("") + simplifiedRight.eval(""));
         }
 
         return new Add(simplifiedLeft, simplifiedRight);
+    }
+
+    @Override
+    protected boolean equalsImpl(Expression other) {
+        if (!(other instanceof Add otherAdd)) return false;
+        return this.left.equals(otherAdd.left) && this.right.equals(otherAdd.right);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(left, right);
     }
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Mul extends Expression {
     private final Expression left;
     private final Expression right;
@@ -27,27 +29,38 @@ public class Mul extends Expression {
         return left.eval(variables) * right.eval(variables);
     }
 
-
     @Override
-    public Expression simplify() {
-        Expression simplifiedLeft = left.simplify();
-        Expression simplifiedRight = right.simplify();
+    public Expression simplify(String variables) {
+        Expression simplifiedLeft = left.simplify(variables);
+        Expression simplifiedRight = right.simplify(variables);
 
         if (simplifiedLeft instanceof Number && simplifiedRight instanceof Number) {
             return new Number(simplifiedLeft.eval("") * simplifiedRight.eval(""));
         }
 
-        if (simplifiedLeft.eval("") == 0 || simplifiedRight.eval("") == 0) {
+        if (simplifiedLeft.print().equals("0") || simplifiedRight.print().equals("0")) {
             return new Number(0);
         }
 
-        if (simplifiedLeft.eval("") == 1) {
+        if (simplifiedLeft.print().equals("1")) {
             return simplifiedRight;
         }
-        if (simplifiedRight.eval("") == 1) {
+
+        if (simplifiedRight.print().equals("1")) {
             return simplifiedLeft;
         }
 
         return new Mul(simplifiedLeft, simplifiedRight);
+    }
+
+    @Override
+    protected boolean equalsImpl(Expression other) {
+        if (!(other instanceof Mul otherMul)) return false;
+        return this.left.equals(otherMul.left) && this.right.equals(otherMul.right);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(left, right);
     }
 }

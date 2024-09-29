@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Div extends Expression {
     private final Expression left;
     private final Expression right;
@@ -31,14 +33,25 @@ public class Div extends Expression {
     }
 
     @Override
-    public Expression simplify() {
-        Expression simplifiedLeft = left.simplify();
-        Expression simplifiedRight = right.simplify();
+    public Expression simplify(String variables) {
+        Expression simplifiedLeft = left.simplify(variables);
+        Expression simplifiedRight = right.simplify(variables);
 
         if (simplifiedLeft instanceof Number && simplifiedRight instanceof Number) {
             return new Number(simplifiedLeft.eval("") / simplifiedRight.eval(""));
         }
 
         return new Div(simplifiedLeft, simplifiedRight);
+    }
+
+    @Override
+    protected boolean equalsImpl(Expression other) {
+        if (!(other instanceof Div otherDiv)) return false;
+        return this.left.equals(otherDiv.left) && this.right.equals(otherDiv.right);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(left, right);
     }
 }

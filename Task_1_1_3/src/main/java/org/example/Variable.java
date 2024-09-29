@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Variable extends Expression {
     private final String name;
 
@@ -30,7 +32,20 @@ public class Variable extends Expression {
     }
 
     @Override
-    public Expression simplify() {
+    public Expression simplify(String variables) {
         return this;
     }
+
+    @Override
+    protected boolean equalsImpl(Expression other) {
+        if (!(other instanceof Variable otherVariable)) return false;
+        return this.name.equals(otherVariable.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }
+
+

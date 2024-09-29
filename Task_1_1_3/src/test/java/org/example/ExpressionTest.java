@@ -2,6 +2,7 @@ package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 import org.junit.jupiter.api.Test;
 
@@ -46,4 +47,47 @@ class ExpressionTest {
         assertThrows(ArithmeticException.class, () -> expr.eval("x=10"));
     }
 
+    // simplify tests
+    @Test
+    public void testSimplifyIdenticalExpressions() {
+        Expression complex = new Mul(
+            new Add(new Number(3), new Number(4)),
+            new Sub(new Variable("x"), new Variable("x"))
+        );
+        Expression simplified = complex.simplify("");
+
+        assertInstanceOf(Number.class, simplified);
+        assertEquals(0, simplified.eval(""));
+    }
+
+    @Test
+    public void testSimplifyWithConstants() {
+        Expression expr = new Mul(
+            new Number(2),
+            new Add(new Number(3), new Number(5))
+        );
+        Expression simplified = expr.simplify("");
+
+        assertInstanceOf(Number.class, simplified);
+        assertEquals(16, simplified.eval(""));
+    }
+
+    @Test
+    public void testSimplifySubComplexIdenticalExpressions() {
+        Expression expr1 = new Mul(
+            new Add(new Variable("x"), new Number(2)),
+            new Sub(new Variable("y"), new Number(3))
+        );
+
+        Expression expr2 = new Mul(
+            new Add(new Variable("x"), new Number(2)),
+            new Sub(new Variable("y"), new Number(3))
+        );
+
+        Expression subExpr = new Sub(expr1, expr2);
+        Expression simplified = subExpr.simplify("");
+
+        assertInstanceOf(Number.class, simplified);
+        assertEquals(0, simplified.eval(""));
+    }
 }
