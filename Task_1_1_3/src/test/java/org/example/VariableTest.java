@@ -2,21 +2,26 @@ package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Unit tests for the {@link Variable} class.
+ */
 class VariableTest {
 
     @Test
-    void testPrint() {
+    void testToStr() {
         Expression expr = new Variable("x");
-        assertEquals("x", expr.print());
+        assertEquals("x", expr.toStr());
     }
 
     @Test
     void testDerivative() {
         Expression expr = new Variable("x");
-        assertEquals("1", expr.derivative("x").print());
+        assertEquals("1", expr.derivative("x").toStr());
     }
 
     @Test
@@ -29,5 +34,21 @@ class VariableTest {
     void testEvalVariableNotFound() {
         Expression expr = new Variable("x");
         assertThrows(IllegalArgumentException.class, () -> expr.eval("y=10"));
+    }
+
+    @Test
+    public void testVariableEquals() {
+        Expression var1 = new Variable("x");
+        Expression var2 = new Variable("x");
+        Expression var3 = new Variable("y");
+        assertTrue(var1.equals(var2));
+        assertFalse(var1.equals(var3));
+    }
+
+    @Test
+    public void testVariableHashCode() {
+        Expression var1 = new Variable("x");
+        Expression var2 = new Variable("x");
+        assertEquals(var1.hashCode(), var2.hashCode());
     }
 }

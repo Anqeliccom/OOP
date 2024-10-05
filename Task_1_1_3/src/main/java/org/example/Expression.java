@@ -3,8 +3,17 @@ package org.example;
 import java.util.Scanner;
 import java.util.Stack;
 
+/**
+ * Class representing a mathematical expression.
+ * Supports differentiating, evaluating and simplifying expressions.
+ */
 public abstract class Expression {
 
+    /**
+     * Main method for user input and interaction with the expression.
+     *
+     * @param args command-line arguments (not used).
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -13,12 +22,12 @@ public abstract class Expression {
         inputExpr = inputExpr.replaceAll("\\s", "");
 
         Expression expr = parseExpression(inputExpr);
-        System.out.println("Введённое выражение: " + expr.print());
+        System.out.println("Введённое выражение: " + expr.toStr());
 
         System.out.println("Введите переменную для дифференцирования: ");
         String variable = scanner.nextLine();
         Expression derivative = expr.derivative(variable);
-        System.out.println("Производная по " + variable + ": " + derivative.print());
+        System.out.println("Производная по " + variable + ": " + derivative.toStr());
 
         System.out.println("Введите значения переменных (например, x=10;y=5): ");
         String variables = scanner.nextLine();
@@ -26,10 +35,16 @@ public abstract class Expression {
         System.out.println("Результат вычисления: " + result);
 
         Expression simplified = expr.simplify(variables);
-        System.out.println("Упрощённое выражение: " + simplified.print());
+        System.out.println("Упрощённое выражение: " + simplified.toStr());
 
     }
 
+    /**
+     * Parses a mathematical expression from a string.
+     *
+     * @param expr the string containing the mathematical expression.
+     * @return the parsed expression.
+     */
     public static Expression parseExpression(String expr) {
         Stack<Expression> values = new Stack<>();
         Stack<Character> operators = new Stack<>();
@@ -115,6 +130,13 @@ public abstract class Expression {
         };
     }
 
+    /**
+     * Compares this expression with another object for basic equality.
+     * Delegates the comparison to the `equalsImpl` method for specific expression comparison logic.
+     *
+     * @param obj the object to compare with this expression.
+     * @return true if the objects are the same or represent the same expression, false otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -123,13 +145,44 @@ public abstract class Expression {
         return equalsImpl((Expression) obj);
     }
 
-    public abstract String print();
+    /**
+     * Converts the expression-object to a string.
+     *
+     * @return a string representation of the expression.
+     */
+    public abstract String toStr();
 
+    /**
+     * Computes the derivative of the expression with respect to a given variable.
+     *
+     * @param variable the variable to differentiate by.
+     * @return the differentiated expression.
+     */
     public abstract Expression derivative(String variable);
 
+    /**
+     * Evaluates the expression using the provided variable assignments.
+     *
+     * @param variables a string containing variable assignments separated by semicolons.
+     * @return the result of evaluating the expression.
+     */
     public abstract int eval(String variables);
 
+    /**
+     * Simplifies the expression according to the specified rules.
+     *
+     * @param variables a string containing variable assignments separated by semicolons.
+     * @return the simplified expression.
+     */
     public abstract Expression simplify(String variables);
 
+    /**
+     * Performs a subclass-specific equality comparison between this expression and another.
+     * Called from the `equals` method after passing the basic checks.
+     *
+     * @param other the other expression to compare with this one.
+     * @return true if both expressions are `Subclass` instances
+     * with equal left and right subexpressions, false otherwise.
+     */
     protected abstract boolean equalsImpl(Expression other);
 }

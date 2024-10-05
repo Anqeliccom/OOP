@@ -2,15 +2,23 @@ package org.example;
 
 import java.util.Objects;
 
+/**
+ * Represents a constant numeric value in an expression.
+ */
 public class Number extends Expression {
     private final int value;
 
+    /**
+     * Constructs a number with the specified value.
+     *
+     * @param value the constant numeric value.
+     */
     public Number(int value) {
         this.value = value;
     }
 
     @Override
-    public String print() {
+    public String toStr() {
         return Integer.toString(value);
     }
 

@@ -2,15 +2,23 @@ package org.example;
 
 import java.util.Objects;
 
+/**
+ * Represents a variable in an expression.
+ */
 public class Variable extends Expression {
     private final String name;
 
+    /**
+     * Constructs a variable with the specified name.
+     *
+     * @param name the name of the variable.
+     */
     public Variable(String name) {
         this.name = name;
     }
 
     @Override
-    public String print() {
+    public String toStr() {
         return name;
     }
 

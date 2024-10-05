@@ -2,18 +2,27 @@ package org.example;
 
 import java.util.Objects;
 
+/**
+ * Represents the addition operation in an expression.
+ */
 public class Add extends Expression {
     private final Expression left;
     private final Expression right;
 
+    /**
+     * Constructs an addition expression with two operands.
+     *
+     * @param left the left operand.
+     * @param right the right operand.
+     */
     public Add(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }
 
     @Override
-    public String print() {
-        return "(" + left.print() + "+" + right.print() + ")";
+    public String toStr() {
+        return "(" + left.toStr() + "+" + right.toStr() + ")";
     }
 
     @Override

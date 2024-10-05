@@ -2,18 +2,27 @@ package org.example;
 
 import java.util.Objects;
 
+/**
+ * Represents the division operation in an expression.
+ */
 public class Div extends Expression {
     private final Expression left;
     private final Expression right;
 
+    /**
+     * Constructs a division expression with two operands.
+     *
+     * @param left the left operand.
+     * @param right the right operand.
+     */
     public Div(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }
 
     @Override
-    public String print() {
-        return "(" + left.print() + "/" + right.print() + ")";
+    public String toStr() {
+        return "(" + left.toStr() + "/" + right.toStr() + ")";
     }
 
     @Override

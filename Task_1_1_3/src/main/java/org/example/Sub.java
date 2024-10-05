@@ -2,18 +2,28 @@ package org.example;
 
 import java.util.Objects;
 
+
+/**
+ * Represents the subtraction operation in an expression.
+ */
 public class Sub extends Expression {
     private final Expression left;
     private final Expression right;
 
+    /**
+     * Constructs a subtraction expression with two operands.
+     *
+     * @param left the left operand.
+     * @param right the right operand.
+     */
     public Sub(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }
 
     @Override
-    public String print() {
-        return "(" + left.print() + "-" + right.print() + ")";
+    public String toStr() {
+        return "(" + left.toStr() + "-" + right.toStr() + ")";
     }
 
     @Override

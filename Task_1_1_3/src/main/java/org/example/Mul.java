@@ -2,18 +2,27 @@ package org.example;
 
 import java.util.Objects;
 
+/**
+ * Represents the multiplication operation in an expression.
+ */
 public class Mul extends Expression {
     private final Expression left;
     private final Expression right;
 
+    /**
+     * Constructs a multiplication expression with two operands.
+     *
+     * @param left the left operand.
+     * @param right the right operand.
+     */
     public Mul(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }
 
     @Override
-    public String print() {
-        return "(" + left.print() + "*" + right.print() + ")";
+    public String toStr() {
+        return "(" + left.toStr() + "*" + right.toStr() + ")";
     }
 
     @Override
@@ -38,15 +47,15 @@ public class Mul extends Expression {
             return new Number(simplifiedLeft.eval("") * simplifiedRight.eval(""));
         }
 
-        if (simplifiedLeft.print().equals("0") || simplifiedRight.print().equals("0")) {
+        if (simplifiedLeft.equals(new Number(0)) || simplifiedRight.equals(new Number(0))) {
             return new Number(0);
         }
 
-        if (simplifiedLeft.print().equals("1")) {
+        if (simplifiedLeft.equals(new Number(1))) {
             return simplifiedRight;
         }
 
-        if (simplifiedRight.print().equals("1")) {
+        if (simplifiedRight.equals(new Number(1))) {
             return simplifiedLeft;
         }
 
