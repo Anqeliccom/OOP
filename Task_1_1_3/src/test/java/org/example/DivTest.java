@@ -1,8 +1,8 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +42,6 @@ class DivTest {
         assertEquals(2, expr.eval("x=10;y=5"));
     }
 
-    // simplify tests
     @Test
     public void testSimplifyDivBothNumbers() {
         Expression div = new Div(new Number(10), new Number(2));

@@ -1,8 +1,8 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +42,6 @@ class AddTest {
         assertEquals(15, expr.eval("x=10;y=5"));
     }
 
-    // simplify tests
     @Test
     public void testSimplifyAddBothNumbers() {
         Expression add = new Add(new Number(3), new Number(2));

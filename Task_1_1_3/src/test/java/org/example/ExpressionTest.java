@@ -2,12 +2,11 @@ package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests for the {@link Expression} class.
@@ -40,7 +39,8 @@ class ExpressionTest {
         Expression expr = Expression.parseExpression("((x+5)*((y-2)/z))");
         Expression derivative = expr.derivative("x");
         Expression expected = new Add(
-            new Mul(new Add(new Number(1), new Number(0)), new Div(new Sub(new Variable("y"), new Number(2)), new Variable("z"))),
+            new Mul(new Add(new Number(1), new Number(0)),
+                new Div(new Sub(new Variable("y"), new Number(2)), new Variable("z"))),
             new Mul(new Add(new Variable("x"), new Number(5)), new Div(
                 new Sub(
                     new Mul(new Sub(new Number(0), new Number(0)), new Variable("z")),
@@ -72,7 +72,6 @@ class ExpressionTest {
         assertThrows(ArithmeticException.class, () -> expr.eval("x=10"));
     }
 
-    // simplify tests
     @Test
     public void testSimplifyIdenticalExpressions() {
         Expression complex = new Mul(
@@ -133,5 +132,44 @@ class ExpressionTest {
             """;
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Expression.main(new String[]{});
+    }
+
+    @Test
+    void testDerivativeComplexExpressionWithoutParentheses() {
+        Expression expr = Expression.parseExpression("x*2+y/3-z");
+        Expression derivative = expr.derivative("x");
+        Expression expected = new Sub(
+            new Add(
+                new Add(
+                    new Mul(new Number(1), new Number(2)),
+                    new Mul(new Variable("x"), new Number(0))
+                ),
+                new Div(
+                    new Sub(
+                        new Mul(new Number(0), new Number(3)),
+                        new Mul(new Variable("y"), new Number(0))
+                    ),
+                    new Mul(new Number(3), new Number(3))
+                )
+            ),
+            new Number(0)
+        );
+        assertEquals("((((1*2)+(x*0))+(((0*3)-(y*0))/(3*3)))-0)", derivative.toStr());
+        assertEquals(expected, derivative);
+    }
+
+    @Test
+    void testEvalComplexExpressionWithoutParentheses() {
+        Expression expr = Expression.parseExpression("2*x+3*y/5-z");
+        assertEquals("(((2*x)+((3*y)/5))-z)", expr.toStr());
+        assertEquals(13, expr.eval("x=4;y=10;z=1"));
+    }
+
+    @Test
+    void testSimplifyWithoutParentheses() {
+        Expression expr = Expression.parseExpression("2+x*0");
+        Expression simplified = expr.simplify("");
+        assertEquals("2", simplified.toStr());
+        assertEquals(new Number(2), simplified);
     }
 }

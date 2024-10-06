@@ -2,8 +2,8 @@ package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +37,7 @@ class VariableTest {
     }
 
     @Test
-    public void testVariableEquals() {
+    public void testEquals() {
         Expression var1 = new Variable("x");
         Expression var2 = new Variable("x");
         Expression var3 = new Variable("y");
@@ -46,7 +46,7 @@ class VariableTest {
     }
 
     @Test
-    public void testVariableHashCode() {
+    public void testHashCode() {
         Expression var1 = new Variable("x");
         Expression var2 = new Variable("x");
         assertEquals(var1.hashCode(), var2.hashCode());
