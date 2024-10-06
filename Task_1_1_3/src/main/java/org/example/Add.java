@@ -49,7 +49,9 @@ public class Add extends Expression {
 
     @Override
     protected boolean equalsImpl(Expression other) {
-        if (!(other instanceof Add otherAdd)) return false;
+        if (!(other instanceof Add otherAdd)) {
+            return false;
+        }
         return this.left.equals(otherAdd.left) && this.right.equals(otherAdd.right);
     }
 

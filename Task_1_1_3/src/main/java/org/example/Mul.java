@@ -64,7 +64,7 @@ public class Mul extends Expression {
 
     @Override
     protected boolean equalsImpl(Expression other) {
-        if (!(other instanceof Mul otherMul)){
+        if (!(other instanceof Mul otherMul)) {
             return false;
         }
         return this.left.equals(otherMul.left) && this.right.equals(otherMul.right);

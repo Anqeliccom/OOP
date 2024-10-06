@@ -55,7 +55,7 @@ public class Div extends Expression {
 
     @Override
     protected boolean equalsImpl(Expression other) {
-        if (!(other instanceof Div otherDiv)){
+        if (!(other instanceof Div otherDiv)) {
             return false;
         }
         return this.left.equals(otherDiv.left) && this.right.equals(otherDiv.right);
