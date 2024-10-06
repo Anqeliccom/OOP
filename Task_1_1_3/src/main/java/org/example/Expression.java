@@ -139,8 +139,12 @@ public abstract class Expression {
      */
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()){
+            return false;
+        }
 
         return equalsImpl((Expression) obj);
     }
@@ -182,7 +186,7 @@ public abstract class Expression {
      *
      * @param other the other expression to compare with this one.
      * @return true if both expressions are `Subclass` instances
-     * with equal left and right subexpressions, false otherwise.
+     *     with equal left and right subexpressions, false otherwise.
      */
     protected abstract boolean equalsImpl(Expression other);
 }

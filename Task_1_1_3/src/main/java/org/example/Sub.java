@@ -54,7 +54,9 @@ public class Sub extends Expression {
 
     @Override
     protected boolean equalsImpl(Expression other) {
-        if (!(other instanceof Sub otherSub)) return false;
+        if (!(other instanceof Sub otherSub)){
+            return false;
+        }
         return this.left.equals(otherSub.left) && this.right.equals(otherSub.right);
     }
 

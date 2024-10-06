@@ -39,7 +39,9 @@ public class Number extends Expression {
 
     @Override
     protected boolean equalsImpl(Expression other) {
-        if (!(other instanceof Number otherNumber)) return false;
+        if (!(other instanceof Number otherNumber)){
+            return false;
+        }
         return this.value == otherNumber.value;
     }
 

@@ -46,7 +46,9 @@ public class Variable extends Expression {
 
     @Override
     protected boolean equalsImpl(Expression other) {
-        if (!(other instanceof Variable otherVariable)) return false;
+        if (!(other instanceof Variable otherVariable)) {
+            return false;
+        }
         return this.name.equals(otherVariable.name);
     }
 
