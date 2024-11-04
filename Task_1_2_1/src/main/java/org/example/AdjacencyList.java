@@ -3,10 +3,18 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A graph implementation using an adjacency list representation.
+ */
 public class AdjacencyList extends AbstractGraph {
     private final List<List<Integer>> adjacencyList;
     private int vertexCount;
 
+    /**
+     * Initializes the adjacency list with a specified number of vertices.
+     *
+     * @param size the initial number of vertices.
+     */
     public AdjacencyList(int size) {
         adjacencyList = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -16,27 +24,41 @@ public class AdjacencyList extends AbstractGraph {
     }
 
     @Override
-    public void addVertex(int vertex) {
+    public int addVertex() {
         adjacencyList.add(new ArrayList<>());
-        vertexCount++;
+        return vertexCount++;
+    }
+
+    @Override
+    public boolean hasVertex(int vertex) {
+        return vertex >= 0 && vertex < adjacencyList.size() && adjacencyList.get(vertex) != null;
     }
 
     @Override
     public void removeVertex(int vertex) {
+        if (!hasVertex(vertex)) {
+            throw new IllegalArgumentException("Couldn't remove a vertex - vertex " + vertex + " does not exist.");
+        }
         for (List<Integer> neighbors : adjacencyList) {
             neighbors.remove(Integer.valueOf(vertex));
         }
-        adjacencyList.set(vertex, new ArrayList<>());
+        adjacencyList.set(vertex, null);
         vertexCount--;
     }
 
     @Override
     public void addEdge(int from, int to) {
+        if (!hasVertex(from) || !hasVertex(to)) {
+            throw new IllegalArgumentException("Couldn't add an edge - one or both vertices do not exist.");
+        }
         adjacencyList.get(from).add(to);
     }
 
     @Override
     public void removeEdge(int from, int to) {
+        if (!hasVertex(from) || !hasVertex(to)) {
+            throw new IllegalArgumentException("Couldn't remove an edge - one or both vertices do not exist.");
+        }
         adjacencyList.get(from).remove(Integer.valueOf(to));
     }
 
@@ -53,15 +75,20 @@ public class AdjacencyList extends AbstractGraph {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < adjacencyList.size(); i++) {
-            sb.append(i).append(": ");
-            for (int neighbor : adjacencyList.get(i)) {
-                sb.append(neighbor).append(", ");
+        int displayedIndex = 0;
+
+        for (List<Integer> neighbors : adjacencyList) {
+            if (neighbors != null) {
+                sb.append(displayedIndex).append(": ");
+                for (int neighbor : neighbors) {
+                    sb.append(neighbor).append(", ");
+                }
+                if (!neighbors.isEmpty()) {
+                    sb.delete(sb.length() - 2, sb.length());
+                }
+                sb.append("\n");
+                displayedIndex++;
             }
-            if (sb.charAt(sb.length() - 2) == ',') {
-                sb.delete(sb.length() - 2, sb.length());
-            }
-            sb.append("\n");
         }
         return sb.toString();
     }

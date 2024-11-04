@@ -1,8 +1,17 @@
 package org.example;
 
+/**
+ * Class for performing topological sorting on directed graphs.
+ */
 public class TopologicalSort {
     private int counter;
 
+    /**
+     * Initiates a DFS on each unvisited vertex to process and order all reachable vertices.
+     *
+     * @param graph the graph to be sorted.
+     * @return an array of vertices in topological order or an empty array if a cycle is detected.
+     */
     public int[] sort(Graph graph) {
         int vertexCount = graph.getVertexCount();
         counter = vertexCount;
@@ -18,6 +27,16 @@ public class TopologicalSort {
         return result;
     }
 
+    /**
+     * Performs a DFS to detect cycles and populate the topological order.
+     *
+     * @param graph the graph being sorted.
+     * @param node the current node.
+     * @param visited array tracking visited nodes.
+     * @param recursionStack array tracking nodes in the current recursive stack.
+     * @param result array storing the topological sort order.
+     * @return true if a cycle is detected, false otherwise.
+     */
     private boolean dfs(Graph graph, int node, boolean[] visited, boolean[] recursionStack, int[] result) {
         visited[node] = true;
         recursionStack[node] = true;

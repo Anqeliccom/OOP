@@ -3,33 +3,53 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A graph implementation using an incidence matrix representation.
+ */
 public class IncidenceMatrix extends AbstractGraph {
     private final List<List<Integer>> incidenceMatrix;
     private int vertexCount;
 
+    /**
+     * Initializes the incidence matrix with a specified number of vertices.
+     *
+     * @param size the initial number of vertices.
+     */
     public IncidenceMatrix(int size) {
         incidenceMatrix = new ArrayList<>();
         vertexCount = size;
     }
 
     @Override
-    public void addVertex(int vertex) {
+    public int addVertex() {
         for (List<Integer> edge : incidenceMatrix) {
             edge.add(0);
         }
-        vertexCount++;
+        return vertexCount++;
+    }
+
+    @Override
+    public boolean hasVertex(int vertex) {
+        return vertex >= 0 && vertex < vertexCount;
     }
 
     @Override
     public void removeVertex(int vertex) {
+        if (!hasVertex(vertex)) {
+            throw new IllegalArgumentException("Couldn't remove a vertex - vertex " + vertex + " does not exist.");
+        }
+        incidenceMatrix.removeIf(edge -> edge.get(vertex) == 1 || edge.get(vertex) == -1);
         for (List<Integer> edge : incidenceMatrix) {
-            edge.set(vertex, 0);
+            edge.remove(vertex);
         }
         vertexCount--;
     }
 
     @Override
     public void addEdge(int from, int to) {
+        if (!hasVertex(from) || !hasVertex(to)) {
+            throw new IllegalArgumentException("Couldn't add an edge - one or both vertices do not exist.");
+        }
         List<Integer> edge = new ArrayList<>();
         for (int i = 0; i < vertexCount; i++) {
             edge.add(0);
@@ -41,6 +61,9 @@ public class IncidenceMatrix extends AbstractGraph {
 
     @Override
     public void removeEdge(int from, int to) {
+        if (!hasVertex(from) || !hasVertex(to)) {
+            throw new IllegalArgumentException("Couldn't remove an edge - one or both vertices do not exist.");
+        }
         for (List<Integer> edge : incidenceMatrix) {
             if (edge.get(from) == 1 && edge.get(to) == -1) {
                 incidenceMatrix.remove(edge);
@@ -74,7 +97,7 @@ public class IncidenceMatrix extends AbstractGraph {
             sb.setLength(sb.length() - 1);
             sb.append("\n");
         }
-        return sb.toString().trim();
+        return sb.toString();
     }
 }
 

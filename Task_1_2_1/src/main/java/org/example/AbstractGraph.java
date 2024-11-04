@@ -1,7 +1,18 @@
 package org.example;
 
+import java.util.HashSet;
+
+/**
+ * An abstract base class for graph implementations, providing common methods.
+ */
 public abstract class AbstractGraph implements Graph {
 
+    /**
+     * Compares this graph to another object for equality based on set of neighbors.
+     *
+     * @param obj the object to compare to.
+     * @return true if the graphs are structurally equal, false otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -14,13 +25,18 @@ public abstract class AbstractGraph implements Graph {
             return false;
         }
         for (int v = 0; v < this.getVertexCount(); v++) {
-            if (!this.getNeighbors(v).equals(otherGraph.getNeighbors(v))) {
+            if (!new HashSet<>(this.getNeighbors(v)).equals(new HashSet<>(otherGraph.getNeighbors(v)))) {
                 return false;
             }
         }
         return true;
     }
 
+    /**
+     * Generates a hash code for the graph using the multiplication method.
+     *
+     * @return the hash code based on set of neighbors.
+     */
     @Override
     public int hashCode() {
         final double A = (Math.sqrt(5) - 1) / 2;
@@ -28,8 +44,8 @@ public abstract class AbstractGraph implements Graph {
         int hash = 0;
 
         for (int v = 0; v < getVertexCount(); v++) {
-            int neighborHash = getNeighbors(v).hashCode();
-            hash += (int) (BUCKET_COUNT * ((neighborHash * A) % 1));
+            int neighborHash = new HashSet<>(getNeighbors(v)).hashCode();
+            hash = (int) (BUCKET_COUNT * ((neighborHash * A) % 1));
         }
         return hash;
     }
