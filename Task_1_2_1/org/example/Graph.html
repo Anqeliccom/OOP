@@ -90,6 +90,9 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Graph</span></div>
+<div class="block">Interface representing a directed graph with basic operations for
+ adding and removing vertices and edges, retrieving neighbors of a vertex,
+ reading from a file and other operations.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,30 +110,52 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addEdge(int,int)" class="member-name-link">addEdge</a><wbr>(int&nbsp;from,
  int&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addVertex(int)" class="member-name-link">addVertex</a><wbr>(int&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Adds a directed edge between two vertices.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addVertex()" class="member-name-link">addVertex</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Adds a new vertex to the graph with the next available vertex number.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getNeighbors(int)" class="member-name-link">getNeighbors</a><wbr>(int&nbsp;vertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Returns the neighbors of a given vertex.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getVertexCount()" class="member-name-link">getVertexCount</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns the total number of vertices in the graph.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasEdge(int,int)" class="member-name-link">hasEdge</a><wbr>(int&nbsp;from,
  int&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#readFromFile(java.lang.String)" class="member-name-link">readFromFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;from,
- int&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Checks if an edge exists between two vertices.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasVertex(int)" class="member-name-link">hasVertex</a><wbr>(int&nbsp;vertex)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Checks if a vertex exists in the graph.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#readFromFile(java.lang.String,org.example.Graph)" class="member-name-link">readFromFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ <a href="Graph.html" title="interface in org.example">Graph</a>&nbsp;graph)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Reads a graph from a file and populates the graph with vertices and edges.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeVertex(int)" class="member-name-link">removeVertex</a><wbr>(int&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;from,
+ int&nbsp;to)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Removes a directed edge between two vertices.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeVertex(int)" class="member-name-link">removeVertex</a><wbr>(int&nbsp;vertex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Removes a vertex from the graph.</div>
+</div>
 </div>
 </div>
 </div>
@@ -146,15 +171,28 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="addVertex(int)">
+<section class="detail" id="addVertex()">
 <h3>addVertex</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">addVertex</span>()</div>
+<div class="block">Adds a new vertex to the graph with the next available vertex number.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the index of the newly added vertex.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="removeVertex(int)">
 <h3>removeVertex</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="block">Removes a vertex from the graph.
+ Does not preserve the order of the vertex numbers for IncidenceMatrix.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to be removed.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the vertex does not exist.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -162,6 +200,14 @@ loadScripts(document, 'script');</script>
 <h3>addEdge</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(int&nbsp;from,
  int&nbsp;to)</span></div>
+<div class="block">Adds a directed edge between two vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - the starting vertex.</dd>
+<dd><code>to</code> - the ending vertex.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if one or both vertices do not exist.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -169,12 +215,25 @@ loadScripts(document, 'script');</script>
 <h3>removeEdge</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(int&nbsp;from,
  int&nbsp;to)</span></div>
+<div class="block">Removes a directed edge between two vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - the starting vertex.</dd>
+<dd><code>to</code> - the ending vertex.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if one or both vertices do not exist.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getVertexCount()">
 <h3>getVertexCount</h3>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getVertexCount</span>()</div>
+<div class="block">Returns the total number of vertices in the graph.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the number of vertices.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -182,18 +241,53 @@ loadScripts(document, 'script');</script>
 <h3>hasEdge</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">hasEdge</span><wbr><span class="parameters">(int&nbsp;from,
  int&nbsp;to)</span></div>
+<div class="block">Checks if an edge exists between two vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - the starting vertex.</dd>
+<dd><code>to</code> - the ending vertex.</dd>
+<dt>Returns:</dt>
+<dd>true if the edge exists, false otherwise.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasVertex(int)">
+<h3>hasVertex</h3>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">hasVertex</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="block">Checks if a vertex exists in the graph.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to check.</dd>
+<dt>Returns:</dt>
+<dd>true if the vertex exists, false otherwise.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getNeighbors(int)">
 <h3>getNeighbors</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="block">Returns the neighbors of a given vertex.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex whose neighbors are requested.</dd>
+<dt>Returns:</dt>
+<dd>a set of neighbor vertices.</dd>
+</dl>
 </section>
 </li>
 <li>
-<section class="detail" id="readFromFile(java.lang.String)">
+<section class="detail" id="readFromFile(java.lang.String,org.example.Graph)">
 <h3>readFromFile</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readFromFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readFromFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filename,
+ <a href="Graph.html" title="interface in org.example">Graph</a>&nbsp;graph)</span></div>
+<div class="block">Reads a graph from a file and populates the graph with vertices and edges.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filename</code> - the path to the file.</dd>
+<dd><code>graph</code> - an empty graph of size 0 to populate.</dd>
+</dl>
 </section>
 </li>
 </ul>

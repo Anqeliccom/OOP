@@ -96,6 +96,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">AdjacencyList</span>
 <span class="extends-implements">extends <a href="AbstractGraph.html" title="class in org.example">AbstractGraph</a></span></div>
+<div class="block">A graph implementation using an adjacency list representation.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,7 +109,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">AdjacencyList</a><wbr>(int&nbsp;size)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initializes the adjacency list with a specified number of vertices.</div>
+</div>
 </div>
 </section>
 </li>
@@ -126,27 +129,44 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdge(int,int)" class="member-name-link">addEdge</a><wbr>(int&nbsp;from,
  int&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex(int)" class="member-name-link">addVertex</a><wbr>(int&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a directed edge between two vertices.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addVertex()" class="member-name-link">addVertex</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a new vertex to the graph with the next available vertex number.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVertexCount()" class="member-name-link">getVertexCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the total number of vertices in the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasEdge(int,int)" class="member-name-link">hasEdge</a><wbr>(int&nbsp;from,
  int&nbsp;to)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;from,
- int&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if an edge exists between two vertices.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasVertex(int)" class="member-name-link">hasVertex</a><wbr>(int&nbsp;vertex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks if a vertex exists in the graph.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(int)" class="member-name-link">removeVertex</a><wbr>(int&nbsp;vertex)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;from,
+ int&nbsp;to)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a directed edge between two vertices.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeVertex(int)" class="member-name-link">removeVertex</a><wbr>(int&nbsp;vertex)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a vertex from the graph.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -158,7 +178,7 @@ loadScripts(document, 'script');</script>
 <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.example.Graph">Methods inherited from interface&nbsp;org.example.<a href="Graph.html" title="interface in org.example">Graph</a></h3>
-<code><a href="Graph.html#getNeighbors(int)">getNeighbors</a>, <a href="Graph.html#readFromFile(java.lang.String)">readFromFile</a></code></div>
+<code><a href="Graph.html#getNeighbors(int)">getNeighbors</a>, <a href="Graph.html#readFromFile(java.lang.String,org.example.Graph)">readFromFile</a></code></div>
 </section>
 </li>
 </ul>
@@ -174,6 +194,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>AdjacencyList</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AdjacencyList</span><wbr><span class="parameters">(int&nbsp;size)</span></div>
+<div class="block">Initializes the adjacency list with a specified number of vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>size</code> - the initial number of vertices.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -185,15 +210,42 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="addVertex(int)">
+<section class="detail" id="addVertex()">
 <h3>addVertex</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">addVertex</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#addVertex()">Graph</a></code></span></div>
+<div class="block">Adds a new vertex to the graph with the next available vertex number.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the index of the newly added vertex.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasVertex(int)">
+<h3>hasVertex</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasVertex</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#hasVertex(int)">Graph</a></code></span></div>
+<div class="block">Checks if a vertex exists in the graph.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to check.</dd>
+<dt>Returns:</dt>
+<dd>true if the vertex exists, false otherwise.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="removeVertex(int)">
 <h3>removeVertex</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(int&nbsp;vertex)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#removeVertex(int)">Graph</a></code></span></div>
+<div class="block">Removes a vertex from the graph.
+ Does not preserve the order of the vertex numbers for IncidenceMatrix.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - the vertex to be removed.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -201,6 +253,13 @@ loadScripts(document, 'script');</script>
 <h3>addEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(int&nbsp;from,
  int&nbsp;to)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#addEdge(int,int)">Graph</a></code></span></div>
+<div class="block">Adds a directed edge between two vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - the starting vertex.</dd>
+<dd><code>to</code> - the ending vertex.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -208,6 +267,13 @@ loadScripts(document, 'script');</script>
 <h3>removeEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(int&nbsp;from,
  int&nbsp;to)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#removeEdge(int,int)">Graph</a></code></span></div>
+<div class="block">Removes a directed edge between two vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - the starting vertex.</dd>
+<dd><code>to</code> - the ending vertex.</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -215,12 +281,27 @@ loadScripts(document, 'script');</script>
 <h3>hasEdge</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasEdge</span><wbr><span class="parameters">(int&nbsp;from,
  int&nbsp;to)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#hasEdge(int,int)">Graph</a></code></span></div>
+<div class="block">Checks if an edge exists between two vertices.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - the starting vertex.</dd>
+<dd><code>to</code> - the ending vertex.</dd>
+<dt>Returns:</dt>
+<dd>true if the edge exists, false otherwise.</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getVertexCount()">
 <h3>getVertexCount</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getVertexCount</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Graph.html#getVertexCount()">Graph</a></code></span></div>
+<div class="block">Returns the total number of vertices in the graph.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the number of vertices.</dd>
+</dl>
 </section>
 </li>
 <li>
