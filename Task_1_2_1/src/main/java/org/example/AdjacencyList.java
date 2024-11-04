@@ -37,7 +37,8 @@ public class AdjacencyList extends AbstractGraph {
     @Override
     public void removeVertex(int vertex) {
         if (!hasVertex(vertex)) {
-            throw new IllegalArgumentException("Couldn't remove a vertex - vertex " + vertex + " does not exist.");
+            throw new IllegalArgumentException("Couldn't remove a vertex - vertex "
+                + vertex + " does not exist.");
         }
         for (List<Integer> neighbors : adjacencyList) {
             neighbors.remove(Integer.valueOf(vertex));
@@ -49,7 +50,8 @@ public class AdjacencyList extends AbstractGraph {
     @Override
     public void addEdge(int from, int to) {
         if (!hasVertex(from) || !hasVertex(to)) {
-            throw new IllegalArgumentException("Couldn't add an edge - one or both vertices do not exist.");
+            throw new IllegalArgumentException("Couldn't add an edge -" +
+                " one or both vertices do not exist.");
         }
         adjacencyList.get(from).add(to);
     }
@@ -57,7 +59,8 @@ public class AdjacencyList extends AbstractGraph {
     @Override
     public void removeEdge(int from, int to) {
         if (!hasVertex(from) || !hasVertex(to)) {
-            throw new IllegalArgumentException("Couldn't remove an edge - one or both vertices do not exist.");
+            throw new IllegalArgumentException("Couldn't remove an edge -" +
+                " one or both vertices do not exist.");
         }
         adjacencyList.get(from).remove(Integer.valueOf(to));
     }

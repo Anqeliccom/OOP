@@ -25,7 +25,8 @@ public abstract class AbstractGraph implements Graph {
             return false;
         }
         for (int v = 0; v < this.getVertexCount(); v++) {
-            if (!new HashSet<>(this.getNeighbors(v)).equals(new HashSet<>(otherGraph.getNeighbors(v)))) {
+            if (!new HashSet<>(this.getNeighbors(v))
+                .equals(new HashSet<>(otherGraph.getNeighbors(v)))) {
                 return false;
             }
         }
@@ -40,12 +41,12 @@ public abstract class AbstractGraph implements Graph {
     @Override
     public int hashCode() {
         final double A = (Math.sqrt(5) - 1) / 2;
-        final int BUCKET_COUNT = 17;
+        final int bucketCount = 17;
         int hash = 0;
 
         for (int v = 0; v < getVertexCount(); v++) {
             int neighborHash = new HashSet<>(getNeighbors(v)).hashCode();
-            hash = (int) (BUCKET_COUNT * ((neighborHash * A) % 1));
+            hash = (int) (bucketCount * ((neighborHash * A) % 1));
         }
         return hash;
     }

@@ -37,12 +37,14 @@ public class TopologicalSort {
      * @param result array storing the topological sort order.
      * @return true if a cycle is detected, false otherwise.
      */
-    private boolean dfs(Graph graph, int node, boolean[] visited, boolean[] recursionStack, int[] result) {
+    private boolean dfs(Graph graph, int node, boolean[] visited,
+                        boolean[] recursionStack, int[] result) {
         visited[node] = true;
         recursionStack[node] = true;
 
         for (int neighbor : graph.getNeighbors(node)) {
-            if ((!visited[neighbor] && dfs(graph, neighbor, visited, recursionStack, result)) || recursionStack[neighbor]) {
+            if ((!visited[neighbor] && dfs(graph, neighbor, visited,
+                recursionStack, result)) || recursionStack[neighbor]) {
                 return true;
             }
         }

@@ -36,7 +36,8 @@ public class IncidenceMatrix extends AbstractGraph {
     @Override
     public void removeVertex(int vertex) {
         if (!hasVertex(vertex)) {
-            throw new IllegalArgumentException("Couldn't remove a vertex - vertex " + vertex + " does not exist.");
+            throw new IllegalArgumentException("Couldn't remove a vertex - vertex "
+                + vertex + " does not exist.");
         }
         incidenceMatrix.removeIf(edge -> edge.get(vertex) == 1 || edge.get(vertex) == -1);
         for (List<Integer> edge : incidenceMatrix) {
@@ -48,7 +49,8 @@ public class IncidenceMatrix extends AbstractGraph {
     @Override
     public void addEdge(int from, int to) {
         if (!hasVertex(from) || !hasVertex(to)) {
-            throw new IllegalArgumentException("Couldn't add an edge - one or both vertices do not exist.");
+            throw new IllegalArgumentException("Couldn't add an edge -" +
+                " one or both vertices do not exist.");
         }
         List<Integer> edge = new ArrayList<>();
         for (int i = 0; i < vertexCount; i++) {
@@ -62,7 +64,8 @@ public class IncidenceMatrix extends AbstractGraph {
     @Override
     public void removeEdge(int from, int to) {
         if (!hasVertex(from) || !hasVertex(to)) {
-            throw new IllegalArgumentException("Couldn't remove an edge - one or both vertices do not exist.");
+            throw new IllegalArgumentException("Couldn't remove an edge -" +
+                " one or both vertices do not exist.");
         }
         for (List<Integer> edge : incidenceMatrix) {
             if (edge.get(from) == 1 && edge.get(to) == -1) {
