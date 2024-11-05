@@ -7,12 +7,6 @@ import java.util.HashSet;
  */
 public abstract class AbstractGraph implements Graph {
 
-    /**
-     * Compares this graph to another object for equality based on set of neighbors.
-     *
-     * @param obj the object to compare to.
-     * @return true if the graphs are structurally equal, false otherwise.
-     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -33,11 +27,6 @@ public abstract class AbstractGraph implements Graph {
         return true;
     }
 
-    /**
-     * Generates a hash code for the graph using the multiplication method.
-     *
-     * @return the hash code based on set of neighbors.
-     */
     @Override
     public int hashCode() {
         final double A = (Math.sqrt(5) - 1) / 2;

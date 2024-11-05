@@ -119,4 +119,21 @@ public interface Graph {
             System.err.println("Ошибка чтения файла: " + e.getMessage());
         }
     }
+
+    /**
+     * Compares this graph to another object for equality based on set of neighbors.
+     *
+     * @param obj the object to compare to.
+     * @return true if the graphs are structurally equal, false otherwise.
+     */
+    @Override
+    boolean equals(Object obj);
+
+    /**
+     * Generates a hash code for the graph using the multiplication method.
+     *
+     * @return the hash code based on set of neighbors.
+     */
+    @Override
+    int hashCode();
 }
