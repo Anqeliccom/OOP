@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -21,8 +20,8 @@ class SearchSubstringTest {
      * @param repeatCount number of times the content should be repeated.
      * @throws IOException if an I/O error occurs during file writing.
      */
-    private static void generateRepeatedStringFile
-    (String filename, String content, int repeatCount) throws IOException {
+    private static void generateRepeatedStringFile(
+        String filename, String content, int repeatCount) throws IOException {
         try (FileWriter writer = new FileWriter(filename)) {
             for (int i = 0; i < repeatCount; i++) {
                 writer.write(content);

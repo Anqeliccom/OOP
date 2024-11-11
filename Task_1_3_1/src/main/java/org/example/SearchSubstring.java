@@ -30,8 +30,8 @@ public class SearchSubstring {
         int[] pattern = substring.codePoints().toArray();
         int patternLength = pattern.length;
 
-        try (Reader reader = new InputStreamReader
-                (new FileInputStream(filename), StandardCharsets.UTF_8)) {
+        try (Reader reader = new InputStreamReader(
+            new FileInputStream(filename), StandardCharsets.UTF_8)) {
             int[] buffer = new int[patternLength];
             int bufferIndex = 0;
             int index = 0;
