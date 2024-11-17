@@ -21,10 +21,6 @@ test {
     maxHeapSize = "256m"
 }
 
-run {
-    standardInput = System.in
-}
-
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
