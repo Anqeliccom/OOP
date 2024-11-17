@@ -1,7 +1,6 @@
 plugins {
     id 'java'
     id 'jacoco'
-    id 'application'
 }
 
 group = 'org.example'
@@ -17,12 +16,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 }
 
-//application {
-//    mainClassName = 'org.example.Main'
-//}
-
 test {
     useJUnitPlatform()
+    maxHeapSize = "256m"
 }
 
 run {

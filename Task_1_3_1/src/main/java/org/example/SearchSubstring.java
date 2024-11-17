@@ -30,23 +30,28 @@ public class SearchSubstring {
         int[] pattern = substring.codePoints().toArray();
         int patternLength = pattern.length;
 
+        int[] psa = buildPrefixSuffixArray(pattern);
+
         try (Reader reader = new InputStreamReader(
             new FileInputStream(filename), StandardCharsets.UTF_8)) {
-            int[] buffer = new int[patternLength];
-            int bufferIndex = 0;
-            int index = 0;
+            int fileIndex = 0;
+            int patternIndex = 0;
             int codePoint;
 
             while ((codePoint = reader.read()) != -1) {
-                buffer[bufferIndex % patternLength] = codePoint;
-
-                if (index >= patternLength - 1) {
-                    if (matchesPattern(buffer, bufferIndex % patternLength, pattern)) {
-                        occurrences.add(index - patternLength + 1);
+                if (codePoint == pattern[patternIndex]) {
+                    patternIndex++;
+                    if (patternIndex == patternLength) {
+                        occurrences.add(fileIndex - patternLength + 1);
+                        patternIndex = psa[patternIndex - 1];
+                    }
+                } else {
+                    if (patternIndex != 0) {
+                        patternIndex = psa[patternIndex - 1];
+                        continue;
                     }
                 }
-                bufferIndex++;
-                index++;
+                fileIndex++;
             }
         } catch (IOException e) {
             System.err.println("File reading error: " + e.getMessage());
@@ -55,19 +60,32 @@ public class SearchSubstring {
     }
 
     /**
-     * Compares a buffer of characters with the given substring's pattern.
+     * Builds the prefix-suffix array.
+     * This array stores the length of the longest prefix of the pattern
+     * that is also a suffix for each position in the pattern.
      *
-     * @param buffer buffer of characters to compare.
-     * @param startIndex starting index within the buffer to compare from.
-     * @param pattern pattern of the substring represented as an array of code points.
-     * @return true if the buffer matches the pattern, false otherwise.
+     * @param pattern array of code points.
+     * @return prefix-suffix array for the given pattern.
      */
-    private static boolean matchesPattern(int[] buffer, int startIndex, int[] pattern) {
-        for (int i = 0; i < pattern.length; i++) {
-            if (buffer[(startIndex + i + 1) % pattern.length] != pattern[i]) {
-                return false;
+    private static int[] buildPrefixSuffixArray(int[] pattern) {
+        int[] psa = new int[pattern.length];
+        int length = 0;
+        int i = 1;
+
+        while (i < pattern.length) {
+            if (pattern[i] == pattern[length]) {
+                length++;
+                psa[i] = length;
+                i++;
+            } else {
+                if (length != 0) {
+                    length = psa[length - 1];
+                } else {
+                    psa[i] = 0;
+                    i++;
+                }
             }
         }
-        return true;
+        return psa;
     }
 }
